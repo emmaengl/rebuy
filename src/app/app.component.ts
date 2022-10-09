@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'rebuy';
+
+  loggedIn = false;
+
+  // need to build actual login functionality, users would be directed to a form to enter details
+  toggleLogin() { this.loggedIn = !this.loggedIn; }
 }
