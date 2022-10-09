@@ -1,3 +1,5 @@
+import { Injectable } from '@angular/core';
+
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 import { throwError } from 'rxjs';
@@ -5,6 +7,7 @@ import { catchError, retry } from 'rxjs/operators';
 
 import { Product } from "./product";
 
+@Injectable()
 export class ProductsService {
   productsUrl = 'https://fakestoreapi.com/products';
 
