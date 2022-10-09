@@ -11,6 +11,9 @@ export class VoteCounterComponent {
 
   @Input() count = 0;
 
+  // will need to add global data store for loggedIn state
+  @Input() loggedIn = false;
+
   incrementVotes() {
     this.count++
 

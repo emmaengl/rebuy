@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Product } from './product';
 import { ProductsService } from './products.service';
@@ -11,6 +11,7 @@ import { ProductsService } from './products.service';
 })
 
 export class ProductsComponent implements OnInit {
+  @Input() loggedIn = false;
   products: Product[] = [];
   
   constructor(private productsService: ProductsService) {}
