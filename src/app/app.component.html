@@ -9,4 +9,25 @@
   }
 </style>
 
+<div class="container">
+  <header class="header">
+    <img class="logo" src="https://dyivx00f9izcg.cloudfront.net/images/rebuy-logo.rev-b3e2d3452ef085d.svg">
+    <nav class="header-nav">
+      <ul class="nav-links">
+        <li>
+          <button class="login">Login</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="collection">
+    <aside class="sidebar">
+      <select name="sort" id="sort" class="sort">
+        <option value="votes">Sort by: Votes</option>
+      </select>
+    </aside>
+    <app-products></app-products>
+  </main>
+</div>
+
 <router-outlet></router-outlet>
