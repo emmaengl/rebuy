@@ -3,6 +3,6 @@
     <img [src]="product.image" class="prd-image">
     <h3>{{ product.title }}</h3>
     <div>{{product.price}}</div>
-    <button class="login">Login to vote</button>
+    <app-vote-counter [count]="product.rating.count"></app-vote-counter>
   </li>
 </ul>
