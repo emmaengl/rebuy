@@ -1,1 +1,5 @@
-<p>vote-counter works!</p>
+<div class="prd-rating">
+  <div class="rating">Votes: {{ count }}</div>
+  <button (click)="incrementVotes()">Upvote</button>
+  <button (click)="decrementVotes()">Downvote</button>
+</div>
