@@ -1,0 +1,16 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.prd-card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.prd-image {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
