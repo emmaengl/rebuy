@@ -1,1 +1,8 @@
-<p>products works!</p>
+<ul class="products">
+  <li *ngFor="let product of products" class="prd-card">
+    <img [src]="product.image" class="prd-image">
+    <h3>{{ product.title }}</h3>
+    <div>{{product.price}}</div>
+    <button class="login">Login to vote</button>
+  </li>
+</ul>
