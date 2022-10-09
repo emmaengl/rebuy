@@ -35,7 +35,9 @@
     <nav class="header-nav">
       <ul class="nav-links">
         <li>
-          <button class="login">Login</button>
+          <button class="login" (click)="toggleLogin()">
+            {{loggedIn ? 'Log Out' : 'Login'}}
+          </button>
         </li>
       </ul>
     </nav>
