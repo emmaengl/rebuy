@@ -18,6 +18,11 @@
   .logo {
     width: 8.5rem;
   }
+
+  .login {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+  }
 </style>
 
 <div class="container">
@@ -26,7 +31,7 @@
     <nav class="header-nav">
       <ul class="nav-links">
         <li>
-          <button class="login" (click)="toggleLogin()">
+          <button class="login btn" (click)="toggleLogin()">
             {{loggedIn ? 'Log Out' : 'Login'}}
           </button>
         </li>
