@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 
-import { throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 import { Product } from "./product";
@@ -13,8 +13,19 @@ export class ProductsService {
 
   constructor(private http: HttpClient) { }
 
-  getProducts() {
+  getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.productsUrl)
+      .pipe(
+        retry(3), // retry a failed request up to 3 times
+        catchError(this.handleError) // then handle the error
+      );
+  }
+
+  sortProducts(term:string): Observable<Product[]> {
+    const options = term ?
+    { params: new HttpParams().set('sort', term) } : {};
+
+    return this.http.get<Product[]>(this.productsUrl, options)
       .pipe(
         retry(3), // retry a failed request up to 3 times
         catchError(this.handleError) // then handle the error

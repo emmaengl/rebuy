@@ -14,7 +14,8 @@ export class ProductsComponent implements OnInit {
   @Input() loggedIn = false;
   products: Product[] = [];
   
-  constructor(private productsService: ProductsService) {}
+  constructor(
+    private productsService: ProductsService) {}
 
   ngOnInit() {
     this.getProducts();
@@ -23,8 +24,14 @@ export class ProductsComponent implements OnInit {
   getProducts(): void {
     this.productsService.getProducts()
       .subscribe(products => {
-        console.log(products)
         return this.products = products
       });
+  }
+
+  onSelect(term: string): void {
+    // no endpoint to sort by rating so we'll sort by options we do have for now
+    this.productsService.sortProducts(term).subscribe(products => {
+      return this.products = products
+    });
   }
 }
