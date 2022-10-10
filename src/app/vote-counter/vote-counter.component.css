@@ -1,0 +1,14 @@
+.prd-rating {
+  display: flex;
+  margin-bottom: 0.5rem;
+  justify-content: space-between;
+}
+
+.rating-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 0.8;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 4px;
+}
