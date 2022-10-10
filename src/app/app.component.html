@@ -18,15 +18,6 @@
   .logo {
     width: 8.5rem;
   }
-
-  .collection {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-  }
-
-  .sidebar {
-    padding: 2rem 1rem;
-  }
 </style>
 
 <div class="container">
@@ -42,14 +33,8 @@
       </ul>
     </nav>
   </header>
-  <main class="collection">
-    <aside class="sidebar">
-      <select name="sort" id="sort" class="sort">
-        <option value="votes">Sort by: Votes</option>
-      </select>
-    </aside>
-    <app-products [loggedIn]="loggedIn"></app-products>
-  </main>
+  <app-products [loggedIn]="loggedIn"></app-products>
 </div>
 
+<!-- A placeholder routing component, not in use -->
 <router-outlet></router-outlet>

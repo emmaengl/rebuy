@@ -1,8 +1,17 @@
-<ul class="products">
-  <li *ngFor="let product of products" class="prd-card">
-    <img [src]="product.image" class="prd-image">
-    <h3>{{ product.title }}</h3>
-    <div>{{product.price}}</div>
-    <app-vote-counter [count]="product.rating.count" [loggedIn]="loggedIn"></app-vote-counter>
-  </li>
-</ul>
+<main class="collection">
+  <aside class="sidebar">
+    <select #sortProducts name="sort" id="sort" class="sort" (change)="onSelect(sortProducts.value)">
+      <option default value="asc">Sort by: Best Results</option>
+      <option value="desc">Sort by: Votes</option>
+    </select>
+  </aside>
+
+  <ul class="products">
+    <li *ngFor="let product of products" class="prd-card">
+      <img [src]="product.image" class="prd-image">
+      <h3>{{ product.title }}</h3>
+      <div>{{product.price}}</div>
+      <app-vote-counter [count]="product.rating.count" [loggedIn]="loggedIn"></app-vote-counter>
+    </li>
+  </ul>
+</main>
