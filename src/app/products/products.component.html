@@ -8,10 +8,15 @@
 
   <ul class="products">
     <li *ngFor="let product of products" class="prd-card">
-      <img [src]="product.image" class="prd-image">
+      <div class="image-container">
+        <img [src]="product.image" class="prd-image">
+      </div>
       <h3>{{ product.title }}</h3>
       <div>€{{product.price | number: '1.2-2' }}</div>
       <app-vote-counter [count]="product.rating.count" [loggedIn]="loggedIn"></app-vote-counter>
+
+      <!-- Placeholder; we need to build a cart API and call on it with relevant product data  -->
+      <a *ngIf="loggedIn" class="prd-cta btn" href="https://www.rebuy.de/">Buy now</a>
     </li>
   </ul>
 </main>
