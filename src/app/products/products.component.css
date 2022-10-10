@@ -26,10 +26,20 @@
   max-height: 100%;
 }
 
+.prd-price {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .image-container {
   width: 270px;
   height: 270px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.prd-cta {
+  align-self: start;
+  padding: 0.5rem 1rem;
 }

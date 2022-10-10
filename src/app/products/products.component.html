@@ -14,7 +14,7 @@
       <h3>{{ product.title }}</h3>
       <app-vote-counter [count]="product.rating.count" [loggedIn]="loggedIn"></app-vote-counter>
 
-      <div>€{{product.price | number: '1.2-2' }}</div>
+      <div class="prd-price">€{{product.price | number: '1.2-2' }}</div>
 
       <!-- Placeholder; we need to build a cart API and call on it with relevant product data  -->
       <a *ngIf="loggedIn" class="prd-cta btn" href="https://www.rebuy.de/">Buy now</a>
