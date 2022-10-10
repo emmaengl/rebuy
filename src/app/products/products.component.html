@@ -10,7 +10,7 @@
     <li *ngFor="let product of products" class="prd-card">
       <img [src]="product.image" class="prd-image">
       <h3>{{ product.title }}</h3>
-      <div>{{product.price}}</div>
+      <div>€{{product.price | number: '1.2-2' }}</div>
       <app-vote-counter [count]="product.rating.count" [loggedIn]="loggedIn"></app-vote-counter>
     </li>
   </ul>
